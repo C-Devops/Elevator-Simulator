@@ -63,19 +63,19 @@ traffic_generator::traffic_generator(vector<float> &rates, vector<string> call_r
         funct.string_to_int(split, calls);
         switch(i){
             case 1:
-                vistor_call_rate = calls;
+                vistor_call_rate = set_probabilitys_call(calls);
                 break;
             case 2:
-                patients_call_rate = calls;
+                patients_call_rate = set_probabilitys_call(calls);
                 break;
             case 3:
-                sup_staff_call_rate = calls;
+                sup_staff_call_rate = set_probabilitys_call(calls);
                 break;
             case 4:
-                med_staff_call_rate = calls;
+                med_staff_call_rate = set_probabilitys_call(calls);
                 break;
             case 5:
-                security_staff_call_rate = calls;
+                security_staff_call_rate = set_probabilitys_call(calls);
                 break;
             default:
                 cout<<"case not found"<<endl;
@@ -88,23 +88,50 @@ traffic_generator::~traffic_generator(){
     cout << "traffic generator closed" << endl;
 }
 
-int traffic_generator::passenger_elev_call(string id){
-    Passenger * p;
-    switch(id[0]){
-        case "V":
-            break;
-        case "P":
-            break;
-        case "s";
-            break;
-        case "M":
-            break;
-        case "S":
-            break;
-        default:
-            exit(EXIT_FAILURE);
+vector<int> traffic_generator::set_probabilitys_call(vector<int> prop){
+    vector<int> temp (100);
+    vector<int> range;
+    vector<int>::iterator v_it;
+    int type = 0; //0(reg), 1(emer), 2(evac)
+
+    //fill vector with calls type
+    for(v_it = prop.begin(); v_it != prop.end(); v_it++){
+        for(int i = 0; i<*v_it; i++){
+            temp.push_back(type);
+        }
+        type++;
+        //tmp_int = *v_it;
     }
 
+    //shuffle using system clock
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+	shuffle(temp.begin(), temp.end(), default_random_engine(seed));
+    return temp;
+}
+
+int traffic_generator::passenger_elev_call(string id){
+    Passenger * p;
+    Format_functions funct;
+    vector<string> base_id;
+    stringstream s(id);
+    funct.string_split(s, base_id, "0123456789");
+    int tmp = rand()%100;
+    int out =0;
+    if(base_id[0] == "V"){
+        out = vistor_call_rate[tmp];
+    }else if(base_id[0] == "P"){
+        out = patients_call_rate[tmp];
+    }else if(base_id[0] == "SS"){
+        out = sup_staff_call_rate[tmp];
+    }else if(base_id[0] == "MS"){
+        out = med_staff_call_rate[tmp];
+    }else if(base_id[0] == "SEC"){
+        out = security_staff_call_rate[tmp];
+    }else{
+        cout << "type not found" << endl;
+        exit(EXIT_FAILURE);
+    }
+    return out;
 }
 
 Passenger traffic_generator::gen_pass(){
@@ -113,6 +140,16 @@ Passenger traffic_generator::gen_pass(){
     if(vistor_range[0]<= pick and vistor_range[1]> pick){
         p = new Visitors();
     }else if(patients_range[0] <= pick and patients_range[1] > pick){
-        //other
+       p = new Patients();
+    }else if(sup_staff_range[0] <= pick and sup_staff_range[1] > pick){
+        p = new SupportStaff();
+    }else if(med_staff_range[0] <= pick and med_staff_range[1] > pick){
+        p = new MedicalStaff();
+    }else if(security_staff_range[0] <= pick and security_staff_range[1] > pick){
+        p = new SecurityPersonnel();
+    }else{
+        cout << "passenger generator failed" << endl;
+        exit(EXIT_FAILURE);
     }
+    return p;
 }
