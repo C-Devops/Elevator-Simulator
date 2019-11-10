@@ -19,7 +19,8 @@ traffic_generator::traffic_generator(vector<float> &rates, vector<string> call_r
         total += int(rates[i]*100);
     }
     if(total == 100 and rates.size()==5){
-        int last_temp =0;
+	passenger_spawn_range = set_prob_spw_range(rates);
+        /*int last_temp =0;
         for(int i = 1; i < rates.size()+1; i++){
             int temp = int(rates[i-1]*100)+last_temp;
             switch(i){
@@ -48,7 +49,8 @@ traffic_generator::traffic_generator(vector<float> &rates, vector<string> call_r
                     exit (EXIT_FAILURE);
             }
             last_temp = temp;
-        }
+        }*/
+	
     }else{
         cout<<"rates doesn't add up"<<endl;
         exit (EXIT_FAILURE);
@@ -86,6 +88,26 @@ traffic_generator::traffic_generator(vector<float> &rates, vector<string> call_r
 
 traffic_generator::~traffic_generator(){
     cout << "traffic generator closed" << endl;
+}
+
+vector<int> traffic_generator::set_prob_spw_range(vector<float> rates) {
+	vector<int> temp;
+	vector<float>::iterator v_it;
+	int type = 1;
+	//int start
+	for (v_it = rates.begin(); v_it != rates.end(); v_it++) {
+		//cout << type << endl;
+		int rang = int((*v_it) * 100);
+		//cout << "rang " << rang << "\ntype " << type << endl;
+		for (int i = 0; i < rang ; i++) {
+			temp.push_back(type);
+		}
+		type++;
+	}
+	//shuffle using system clock
+	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+	shuffle(temp.begin(), temp.end(), default_random_engine(seed));
+	return temp;
 }
 
 vector<int> traffic_generator::set_probabilitys_call(vector<int> prop){
@@ -137,7 +159,27 @@ int traffic_generator::passenger_elev_call(string id){
 Passenger traffic_generator::gen_pass(){
     int pick = rand()%100;
     Passenger * p;
-    if(vistor_range[0]<= pick and vistor_range[1]> pick){
+    switch (passenger_spawn_range[pick]) {
+	case 1:
+		p = new Visitors();
+		break;
+	case 2:
+		p = new Patients();
+		break;
+	case 3:
+		p = new SupportStaff();
+		break;
+	case 4:
+		p = new MedicalStaff();
+		break;
+	case 5:
+		p = new SecurityPersonnel();
+		break;
+	default:
+		cout << "case not found: gen_pass" << endl;
+		exit(EXIT_FAILURE);
+    }
+    /*if(vistor_range[0]<= pick and vistor_range[1]> pick){
         p = new Visitors();
     }else if(patients_range[0] <= pick and patients_range[1] > pick){
        p = new Patients();
@@ -150,6 +192,6 @@ Passenger traffic_generator::gen_pass(){
     }else{
         cout << "passenger generator failed" << endl;
         exit(EXIT_FAILURE);
-    }
+    }*/
     return p;
 }
