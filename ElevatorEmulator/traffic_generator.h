@@ -28,6 +28,9 @@ private:
     int med_staff_range [2];
     int security_staff_range [2];
     
+    //improve probability for passenger spawn diversity
+	vector<int> passenger_spawn_range;
+    
     //vector holding value of type of elevator calls, call rand()%100 place
     //used in set_probability_call()
     vector<int> vistor_call_rate;
@@ -41,6 +44,9 @@ public:
     traffic_generator(vector<float> &rate, vector<string> call_rate, vector<string>weight);//string vis_call_rate, string pat_call_rate, string sup_call_rate, string med_call_rate, string security_call_rate, string sup_weight, string med_weight);
     ~traffic_generator();
 
+    //create vector with value 1(vistor), 2(patient), 3(support staff), 4(medical staff), 5(security staff)
+	vector<int> set_prob_spw_range(vector<float> rates);
+    
     //create vector with value 0(normal), 1(emer), 3(evac)
     vector<int> set_probabilitys_call(vector<int> prop);
     
