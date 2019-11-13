@@ -1,0 +1,60 @@
+Passenger * TrafficGenerator::gen_pass(){
+    int pick = rand()%100;
+    Passenger * p;
+    int d = RandomGenerator::generateRandomNumber(0,StringHelper::string_to_int(floor));
+    int c = RandomGenerator::generateRandomNumber(0,StringHelper::string_to_int(floor));
+    while(c == d){
+        int d = RandomGenerator::generateRandomNumber(0,StringHelper::string_to_int(floor));
+        int c = RandomGenerator::generateRandomNumber(0,StringHelper::string_to_int(floor));
+    }
+    switch (passenger_spawn_range[pick]) {
+        case 1:
+            p = new Visitors();
+            p->Weight = 1;
+            p->DestinationFloor = d;
+            p->CurrentFloor = c;
+            break;
+        case 2:
+            p = new Patients();
+            p->Weight = RandomGenerator::generateRandomNumber(StringHelper::string_to_int(Data[5].at(8)),StringHelper::string_to_int(Data[5].at(9)));
+            p->DestinationFloor = d;
+            p->CurrentFloor = c;
+            break;
+        case 3:
+            p = new SupportStaff();
+            p->Weight = RandomGenerator::generateRandomNumber(StringHelper::string_to_int(Data[6].at(9)),StringHelper::string_to_int(Data[5].at(10)));;
+            p->DestinationFloor = d;
+            p->CurrentFloor = c;
+            break;
+        case 4:
+            p = new MedicalStaff();
+            p->Weight = 1;
+            p->DestinationFloor = d;
+            p->CurrentFloor = c;
+            break;
+        case 5:
+            p = new SecurityPersonnel()
+            p->Weight = 1;
+            p->DestinationFloor = d;
+            p->CurrentFloor = c;;
+            break;
+        default:
+            cout << "case not found: gen_pass" << endl;
+            //std::exit(EXIT_FAILURE);
+    }
+    /*if(vistor_range[0]<= pick and vistor_range[1]> pick){
+        p = new Visitors();
+    }else if(patients_range[0] <= pick and patients_range[1] > pick){
+       p = new Patients();
+    }else if(sup_staff_range[0] <= pick and sup_staff_range[1] > pick){
+        p = new SupportStaff();
+    }else if(med_staff_range[0] <= pick and med_staff_range[1] > pick){
+        p = new MedicalStaff();
+    }else if(security_staff_range[0] <= pick and security_staff_range[1] > pick){
+        p = new SecurityPersonnel();
+    }else{
+        cout << "passenger generator failed" << endl;
+        exit(EXIT_FAILURE);
+    }*/
+    return p;
+}
