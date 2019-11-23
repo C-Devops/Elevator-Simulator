@@ -9,11 +9,11 @@ using namespace std;
 
 People::People()
 {
-    cout << "People Constructor ---->" << endl;
+    // cout << "People Constructor ---->" << endl;
 
 }
 
 People::~People()
 {
-    cout << "people Destructor ---->" <<endl;
+    // cout << "people Destructor ---->" <<endl;
 }

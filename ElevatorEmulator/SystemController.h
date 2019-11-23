@@ -1,47 +1,48 @@
-#include <istream>
-#include <string>
-#include <iomanip>
-#include <sstream>
-#include <fstream>
-#include <vector>
+#include <iostream>
 #include <map>
-#include <set>
-#include <iterator>
-
-
+#include <vector>
 
 using namespace std;
 
 
-#ifndef ELEVATOREMULATOR_SYSTEMCONTROLLER_H
-#define ELEVATOREMULATOR_SYSTEMCONTROLLER_H
+#ifndef ELEVATORTESTSIMULATION_SYSTEMCONTROLLER_H
+#define ELEVATORTESTSIMULATION_SYSTEMCONTROLLER_H
 
+#include "Passenger.h"
 
 class SystemController {
 
 public:
     /*
-     * Attributes
-     */
-    std::string line;
-    string result {};
-    int counter = 1;
-    map<int, vector<std::string>> Data;
-
-
-public:
-    /*
      * Constructor and Destructor
      */
-    SystemController();
-    ~SystemController();
+    SystemController(std::string path, int epoch);      // Populate Traffic in Const
+    ~SystemController();                                // Dest
 
 public:
     /*
      * Methods
      */
-    void readFile(std::string path);
+
+    void startElevator();                   // Creates Elevator object and Starts Lift etc
+	void print_status();
+
+public:
+    /*
+     * Attributes
+     */
+
+    map<int, vector<vector<std::string>>> PData;        // PData DataStructure
+    map<int,vector<Passenger *>> Levels;                // Current Floow Data Structrue
+    map<int , vector<Passenger *>> LevelDest;           // Dest Floor Data Structure
+
+    std::string path;                                   // File Path
+    int epoch;                                          // Epoch of Iteration
+    int numberElevator;                                 // Total Number of Elevators
+    int maxCapacity;                                    // max capacity of elevator
+    int maxFloor;                                       // Max Floors
+
 };
 
 
-#endif //ELEVATOREMULATOR_SYSTEMCONTROLLER_H
+#endif //ELEVATORTESTSIMULATION_SYSTEMCONTROLLER_H

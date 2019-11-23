@@ -13,7 +13,9 @@ class SupportStaff: public Staff {
 
 public:
     int static count;
+
 public:
+
     /*
      *  This is constructor  and Destructor
      */

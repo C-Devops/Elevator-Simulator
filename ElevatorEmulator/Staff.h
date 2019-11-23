@@ -10,14 +10,12 @@ using namespace std;
 class Staff:public Passenger {
 
 public:
+
     /*
      * Attributes Constructor and Destructor
      */
 
-//    Staff();
     virtual ~Staff();
-
-
 
 public:
     /*

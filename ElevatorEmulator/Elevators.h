@@ -1,33 +1,66 @@
 #include <iostream>
-//#include <ctime>
+#include <map>
+#include <vector>
+#include <queue>
+#include <deque>
+
+
 using namespace std;
 
-#ifndef ELEVATORS_H_
-#define ELEVATORS_H_
 
+#ifndef ELEVATORTESTSIMULATION_ELEVATORS_H
+#define ELEVATORTESTSIMULATION_ELEVATORS_H
+
+#include "Passenger.h"
 
 class Elevators {
-private:
-	int elevator_id;
-	int maxCapacity;
-	int current_floor;
-	bool current_direction; //false == up, true == down
-	bool door;//false == close, true == open
-	vector<string> onboard;//hold pass ids
 
 public:
     /*
-     *  Constructor and Dest
+     * Const and Dest
      */
-    Elevators(int e, int max = 10);
+    Elevators();
     ~Elevators();
-    bool check_door();//check if door is open
-	void toggle_door();//open or close door
-	int get_current_floor();//return current floor
-	void next_floor();//increment or deincrement floor number
-	bool get_current_direction();//return direction
-	void toggle_direction();//change direction
+
+
+public:
+
+    /*
+     * Methods
+     */
+    void elevatorIntroduce();
+
+	//increament or decreament depending on the direction it is moving
+	void increamentFloor();
+
+	//return if door is close or open
+	bool checkDoor();
+
+	//open or close door
+	void toggleDoor();
+
+
+public:
+    /*
+     * Attributes
+     */
+    int maxCapacity;            // Max capacity
+    char elevatorDirection;     // Direction of Elevator
+    int currentFloor;           // Floor where Elevator is
+    int lowestFloor;           // Lowest Floor it can go is
+    int higestFloor;            // Higest Floor it can Go
+	bool door = false;					//true door open, false door closed
+
+    int static  count;          // Elevator ID
+    string ElevatorId;          // Elevator ID
+    int elevatorWeightCounter;
+
+    deque <Passenger *> Up;
+    deque <Passenger *> Down;
+	deque <Passenger*> Boarded;
+    bool * DestFlag;
+
 };
 
 
-#endif //!ELEVATORS_H
+#endif //ELEVATORTESTSIMULATION_ELEVATORS_H
