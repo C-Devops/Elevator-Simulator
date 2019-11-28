@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ELevatorSimulatorDesignPattern"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ELevatorSimulatorDesignPattern">
+				<Option output="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/ELevatorSimulatorDesignPattern" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 ELevatorSimulatorDesignPattern"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ELevatorSimulatorDesignPattern/fast">
+				<Option output="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/ELevatorSimulatorDesignPattern" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 ELevatorSimulatorDesignPattern/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/ElevatorDirection.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/ElevatorDirection.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Elevators.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Elevators.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/FileRead.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/FileRead.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/GenerateUniquePassenger.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/GenerateUniquePassenger.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/MedicalStaff.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/MedicalStaff.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Passenger.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Passenger.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Patients.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Patients.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/RandomGenerator.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/RandomGenerator.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Security.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Security.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/SecurityPersonnel.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/SecurityPersonnel.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Staff.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Staff.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/StatisticsKeeper.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/StatisticsKeeper.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/StringHelper.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/StringHelper.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/SupportStaff.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/SupportStaff.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/SystemControllerBridge.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/SystemControllerBridge.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/SystemControllerImpA.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/SystemControllerImpA.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/SystemControllerInterface.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/SystemControllerInterface.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/TrafficGenerator.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/TrafficGenerator.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Visitors.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/Visitors.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/main.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/partitions.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/partitions.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/timingWheel.cpp">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/timingWheel.h">
+			<Option target="ELevatorSimulatorDesignPattern"/>
+		</Unit>
+		<Unit filename="/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

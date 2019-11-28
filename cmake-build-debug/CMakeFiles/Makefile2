@@ -44,21 +44,21 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/soumilshah/CLionProjects/OfficalElevator
+CMAKE_SOURCE_DIR = /Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/soumilshah/CLionProjects/OfficalElevator/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/OfficalElevator.dir/all
+all: CMakeFiles/ELevatorSimulatorDesignPattern.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/OfficalElevator.dir/clean
+clean: CMakeFiles/ELevatorSimulatorDesignPattern.dir/clean
 
 .PHONY : clean
 
@@ -68,31 +68,31 @@ preinstall:
 .PHONY : preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/OfficalElevator.dir
+# Target rules for target CMakeFiles/ELevatorSimulatorDesignPattern.dir
 
 # All Build rule for target.
-CMakeFiles/OfficalElevator.dir/all:
-	$(MAKE) -f CMakeFiles/OfficalElevator.dir/build.make CMakeFiles/OfficalElevator.dir/depend
-	$(MAKE) -f CMakeFiles/OfficalElevator.dir/build.make CMakeFiles/OfficalElevator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/soumilshah/CLionProjects/OfficalElevator/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 "Built target OfficalElevator"
-.PHONY : CMakeFiles/OfficalElevator.dir/all
+CMakeFiles/ELevatorSimulatorDesignPattern.dir/all:
+	$(MAKE) -f CMakeFiles/ELevatorSimulatorDesignPattern.dir/build.make CMakeFiles/ELevatorSimulatorDesignPattern.dir/depend
+	$(MAKE) -f CMakeFiles/ELevatorSimulatorDesignPattern.dir/build.make CMakeFiles/ELevatorSimulatorDesignPattern.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 "Built target ELevatorSimulatorDesignPattern"
+.PHONY : CMakeFiles/ELevatorSimulatorDesignPattern.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/OfficalElevator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/soumilshah/CLionProjects/OfficalElevator/cmake-build-debug/CMakeFiles 21
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/OfficalElevator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/soumilshah/CLionProjects/OfficalElevator/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/OfficalElevator.dir/rule
+CMakeFiles/ELevatorSimulatorDesignPattern.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/CMakeFiles 23
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ELevatorSimulatorDesignPattern.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/soumilshah/CLionProjects/ELevatorSimulatorDesignPattern/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ELevatorSimulatorDesignPattern.dir/rule
 
 # Convenience name for target.
-OfficalElevator: CMakeFiles/OfficalElevator.dir/rule
+ELevatorSimulatorDesignPattern: CMakeFiles/ELevatorSimulatorDesignPattern.dir/rule
 
-.PHONY : OfficalElevator
+.PHONY : ELevatorSimulatorDesignPattern
 
 # clean rule for target.
-CMakeFiles/OfficalElevator.dir/clean:
-	$(MAKE) -f CMakeFiles/OfficalElevator.dir/build.make CMakeFiles/OfficalElevator.dir/clean
-.PHONY : CMakeFiles/OfficalElevator.dir/clean
+CMakeFiles/ELevatorSimulatorDesignPattern.dir/clean:
+	$(MAKE) -f CMakeFiles/ELevatorSimulatorDesignPattern.dir/build.make CMakeFiles/ELevatorSimulatorDesignPattern.dir/clean
+.PHONY : CMakeFiles/ELevatorSimulatorDesignPattern.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
