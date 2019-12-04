@@ -8,21 +8,23 @@
 
 #include "Elevators.h"
 #include "ElevatorDirection.h"
+#include "Passenger.h"
 //#include "partition.h"
 #include <iostream>
+#include <map>
 #include <vector>
 
 using namespace std;
 
 class partitions {
 public:
-    Elevators* elevator;
+    Elevators* elevator = nullptr;
     partitions* next = nullptr;
 
 public:
     partitions(Elevators* e, partitions* n = nullptr);
     ~partitions();
-    void elevatorTask();
+    void elevatorTask(map<int, vector<Passenger *>> * Levels);
     void setNextPartition(partitions* n);
     partitions* getNextPartitions();
 };

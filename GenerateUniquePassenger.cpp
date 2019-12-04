@@ -119,7 +119,7 @@ Passenger * GenerateUniquePassenger::genpass(map<int, vector<vector<std::string>
 
     tm->DirectionPassenger = ElevatorDirection::checkDirection(currentfloor,destinationFloor);
     tm->callType = RandomGenerator::generatCall(PData[tmpType][1]);
-
+	
     return tm;
 
 

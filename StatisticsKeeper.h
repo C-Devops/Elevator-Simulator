@@ -17,6 +17,7 @@ public:
 
 public:
     static int totalPassengerCreatedInBatchSize;
+	static int totalPassengersgenerated;
 
     static int visitorCounter;
     static int medicalStaffCounter;

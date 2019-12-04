@@ -10,8 +10,8 @@
 #include <iterator>
 #include <random>
 #include <ctime>
-#import <algorithm>
-#import <chrono>
+#include <algorithm>
+#include <chrono>
 
 
 using namespace std;
@@ -57,7 +57,8 @@ char RandomGenerator::generatCall(vector<std::string> &rates)
 
     unsigned  seed = chrono::system_clock::now().time_since_epoch().count();
     shuffle(Spawnrange.begin(), Spawnrange.end(), default_random_engine(seed));
-    char call  = Spawnrange.at(RandomGenerator::generateRandomNumber(0,99));
+    
+	char call  = Spawnrange.at(RandomGenerator::generateRandomNumber(0,99));
 
     return call;
 }

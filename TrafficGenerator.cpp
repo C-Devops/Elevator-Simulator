@@ -10,7 +10,6 @@
 #include <algorithm>
 #include <random>
 
-
 #include "TrafficGenerator.h"
 #include "FileRead.h"
 #include "RandomGenerator.h"
@@ -23,7 +22,8 @@
 // create a instance of class
 TrafficGenerator *TrafficGenerator::instance = 0;
 
-TrafficGenerator *TrafficGenerator::getinstance(std::string path)
+TrafficGenerator *TrafficGenerator::
+getinstance(std::string path)
 {
     if(instance == 0)
     {
@@ -66,6 +66,7 @@ map<int,vector<Passenger *>> * TrafficGenerator::generatePassengers()
 {
 
     batchSize = RandomGenerator::generateRandomNumber(0,StringHelper::string_to_int(PData[0][0][0]));
+
     cout << "BATCH ::::  " <<batchSize << endl;
 
     if(batchSize !=0)
@@ -78,53 +79,47 @@ map<int,vector<Passenger *>> * TrafficGenerator::generatePassengers()
         {
             try {
                 passenger[i] = GenerateUniquePassenger::genpass(PData, PassengerSpawnRange);
+				StatisticsKeeper::totalPassengersgenerated = StatisticsKeeper::totalPassengersgenerated + 1;
                 Levels[passenger[i]->CurrentFloor].push_back(passenger[i]);             // Then Populates Levels
+                passenger[i]->introduce();
+
+
+                if(passenger[i]->name == "SupportStaff")
+                {
+                    StatisticsKeeper::supportStaffCounter = StatisticsKeeper::supportStaffCounter + 1;
+                }
+                if( passenger[i]->name == "Visitors" )
+                {
+                    StatisticsKeeper::visitorCounter = StatisticsKeeper::visitorCounter + 1;
+                }
+                if(passenger[i]->name == "MedicalStaff")
+                {
+                    StatisticsKeeper::medicalStaffCounter = StatisticsKeeper::medicalStaffCounter + 1;
+                }
+                if(passenger[i]->name == "Patients")
+                {
+                    StatisticsKeeper::patientCounter = StatisticsKeeper::patientCounter + 1;
+                }
+                if(passenger[i]->name == "SecurityPersonnel")
+                {
+                    StatisticsKeeper::securityStaffCounter = StatisticsKeeper::securityStaffCounter + 1;
+                }
+
+                if (passenger[i]->DirectionPassenger == 'U')       // Up Passengers Tracker
+                {
+                    StatisticsKeeper::totalPassengerGoingUp = StatisticsKeeper::totalPassengerGoingUp + 1;
+                }
+                if(passenger[i]->DirectionPassenger == 'D')        // Up Passengers Tracker
+                {
+                    StatisticsKeeper::totalPassengerGoingDown = StatisticsKeeper::totalPassengerGoingDown + 1;
+                }
+
             }
             catch (int e)
             {
                 cout << "Some thing strange occured" << endl;
             }
         }
-
-        for(int j = 0; j< Levels.size(); j++)
-        {
-            for(auto x:Levels[j])
-            {
-
-                if(x->name == "SupportStaff")
-                {
-                    StatisticsKeeper::supportStaffCounter = StatisticsKeeper::supportStaffCounter + 1;
-                }
-                else if( x->name == "Visitors" )
-                {
-                    StatisticsKeeper::visitorCounter = StatisticsKeeper::visitorCounter + 1;
-                }
-                else if(x->name == "MedicalStaff")
-                {
-                    StatisticsKeeper::medicalStaffCounter = StatisticsKeeper::medicalStaffCounter + 1;
-                }
-                else if(x->name == "Patients")
-                {
-                    StatisticsKeeper::patientCounter = StatisticsKeeper::patientCounter + 1;
-                }
-                else if(x->name == "SecurityPersonnel")
-                {
-                    StatisticsKeeper::securityStaffCounter = StatisticsKeeper::securityStaffCounter + 1;
-                }
-
-                if (x->DirectionPassenger == 'U')       // Up Passengers Tracker
-                {
-                    StatisticsKeeper::totalPassengerGoingUp = StatisticsKeeper::totalPassengerGoingUp + 1;
-                }
-                else if(x->DirectionPassenger == 'D')        // Up Passengers Tracker
-                {
-                    StatisticsKeeper::totalPassengerGoingDown = StatisticsKeeper::totalPassengerGoingDown + 1;
-                }
-            }
-
-        }
-
-
     }
 
     return &Levels;
@@ -153,7 +148,6 @@ vector<int> TrafficGenerator::setSpawnRange(vector<float> &Rates)
     //  Put the Reference  Code
     unsigned  seed = chrono::system_clock::now().time_since_epoch().count();
     shuffle(Tem.begin(), Tem.end(), default_random_engine(seed));
-
     return Tem;
 
 }

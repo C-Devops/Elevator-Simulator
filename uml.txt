@@ -1,0 +1,229 @@
+ @startuml
+
+title Classes - Elevator Simulator
+
+abstract class Staff
+abstract class Security
+
+
+Passenger <|-- People
+Passenger <|-- Staff: Abstract Class
+note on link #red: Abstract Class
+
+Passenger <|-- Security  :Abstract Class
+note on link #red: Abstract Class
+
+
+People <|-- Visitors
+People <|-- Patient
+
+Staff <|-- SupportStaff
+Staff <|-- MedicalStaff
+
+Security <|-- SecurityPersonal
+
+class Security{
+virtual void evacuate();
+}
+
+class Staff{
+virtual void emergency ()=0;
+}
+
+class Passenger{
+    std::string PassengerId;
+    int Weight;
+    int CurrentFloor;
+    int DestinationFloor;
+    char DirectionPassenger;
+
+    std::time_t CreationRTime;
+    time_t GetTime;
+    time_t GetOffTime;
+
+    void RequestFloor();
+    void FindWaitTime();
+    virtual void introduce();
+    Passenger();                 // No args Constructor
+    virtual ~Passenger();
+}
+
+class Visitors{
+    {static} int count;
+
+    Visitors();
+    virtual ~Visitors();
+    virtual void introduce () override ;
+}
+
+class Patient{
+    {static} int count;
+
+    Patient();
+    virtual ~Patient();
+    virtual void introduce () override ;
+
+}
+
+class SupportStaff{
+
+    {static} int count;
+    SupportStaff();
+    virtual ~SupportStaff();
+    virtual void introduce () override ;
+    virtual void emergency() override;
+}
+class MedicalStaff{
+
+    {static} int count;
+    MedicalStaff();
+    virtual ~MedicalStaff();
+    virtual void introduce () override ;
+    virtual void emergency() override ;
+}
+
+class SecurityPersonal{
+    {static} int count;
+    SecurityPersonal();
+    virtual ~SecurityPersonal();
+    virtual void introduce () override ;
+    virtual void evacuate() override ;
+}
+
+class FileRead{
+    + std::string line;
+    + string result {};
+    + int counter = 1;
+    + vector<std::string> buldingSetup;
+    + map<int, vector<vector<std::string>>> PData;
+
+    - {static}FileRead* instance;
+    - FileRead();
+
+
+    + readFile(std::string path);
+    + {static} FileRead* getInstance();
+
++ SystemController();
++ ~SystemController();
++ void readFile(std::string path);
+}
+
+class randomGenerator{
+
+{static}int generateRandomNumber(int low, int high);
+{static} char generateCall(vector <std::string> &rates);
+
+}
+
+
+
+
+
+class StringHelper{
++ {static} int string_to_int(std::string num);
++ {static} float string_to_float(std::string num);
++ {static} char time_tToChar(time_t t);
++ {static} vector<string> string_split_f(stringstream& s, string filter = " ");
+
+}
+
+
+class ElevatorDirection{
+{static} char checkDirection(string currentFloor, string DestinationFloor);
+}
+
+class GenerateUniquePassenger{
++ vector<int> passengerSpawnRate;
+{static} Passenger * genpass(map<int, vector<vector<std::string>>> &PData, vector<int> &PassengerSpawnRange);
+
+}
+
+
+class StatisticsKeeper{
++ {static} int visitorCounter;
++ {static}  int medicalStaffCounter;
++ {static} int securityStaffCounter;
++ {static}  int patientCounter;
++ {static} int supportStaffCounter;
++ {static} int totalPassengerGoingUp ;
++ {static} int totalPassengerGoingDown;
+
+}
+
+
+class TrafficGenerator{
+
++ int numFloor;
++ int numElevators;
++ int maxCapacity;
++ int batchSize ;
+
+
++ vector<int>PassengerSpawnRange;
++ map<int, vector<vector<std::string>>> PData;
++ map<int,vector<Passenger *>> Levels;
++ vector<Passenger *> Tem;
+
++ void generatePassengers();
++ vector<int> setSpawnRange(vector<float> &Rates);
++ void displayPassenger();
+
+}
+
+
+
+class Display{
++ {static} int TotalPassengerCreated;
++ {static} void introducePassenger(map<int,vector<Passenger *>> Levels);
++ {static} void displayTotalPassengerCount(int num);
++ {static} void displayDestinationFloors( map<int , vector<Passenger *>> LevelDest);
++ {static} void  displayLevelsCurrent(map<int,vector<Passenger *>> &Levels)
+
+}
+
+class SystemController{
+
++ map<int, vector<vector<std::string>>> PData;
++ map<int,vector<Passenger *>> Levels;
++ map<int,vector<Passenger *>> DestFloors;
+
++ std::string path;
++ int epoch;
++ int numberElevator;
++  int maxCapacity;
++ int maxFloor;
+
+
++ SystemController(std::string path, int epoch);
++ ~SystemController();
+
++ void startElevator();
+
+
+}
+
+class Elevators{
+
++ int maxCapacity;
++ char elevatorDirection;
++ int currentFloor;
++ int lowestFloor;
++ int higestFloor;
++ int static  count;
++ string ElevatorId;
++ int elevatorWeightCounter;
++ deque <Passenger *> Up;
++  deque <Passenger *> Down;
++ vector <bool> DestFlag ;
+}
+
+FileRead *-- TrafficGenerator : Has
+TrafficGenerator *--SystemController : Has
+Passengers *-- TrafficGenerator : Has
+Display *-- TrafficGenerator : Has
+Elevators *-- SystemController :has
+
+
+
+@enduml
