@@ -14,24 +14,25 @@ int SupportStaff::count = 0;
 
 SupportStaff::SupportStaff()
 {
-    cout << "Support Staff Constructor " << endl;
 
     string uniqueId =  "SS";
     count++;
     string unique = uniqueId + std::to_string(count);
     PassengerId = unique;
+    name = "SupportStaff";
 }
 
-SupportStaff::~SupportStaff()
-{
-    cout << "Support staff Destructor " << endl;
-    count --;
-}
+SupportStaff::~SupportStaff(){count --;}
 
 
 void SupportStaff::introduce()
 {
-    cout << "Hi! i am SupportStaff ID "<< PassengerId << endl;
+    cout << "\t\tHi ! I am SupportStaff:\t"<<PassengerId << endl;
+    cout << "\t\tCurrent Floor:\t"<<CurrentFloor<< endl;
+    cout << "\t\tDestination Floor:\t"<<DestinationFloor<< endl;
+    cout << "\t\tI want to go :\t"<<DirectionPassenger<< endl;
+    cout << "\t\tI Call Type :\t"<< callType << endl;
+    cout <<"\n";
 }
 
 

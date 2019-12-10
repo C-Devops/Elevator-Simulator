@@ -6,17 +6,8 @@
 
 using namespace std;
 
-//Security::Security()
-//{
-//    cout << "Security class Constructor " << endl;
-//}
+Security::Security(){}
 
-Security::~Security()
-{
-    cout << "Security Destructor " << endl;
-}
+Security::~Security(){}
 
-//void Security::evacuate()
-//{
-//    cout << "Security Initialized Evacuation" << endl;
-//}
+void Security::evacuate(){}

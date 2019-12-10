@@ -26,17 +26,16 @@ public:
     int Weight;
     int CurrentFloor;
     int DestinationFloor;
-
-    std::string CreationRTime;
-    std::string GetTime;
-    std::string GetOffTime;
+    char DirectionPassenger;
+    std::string name;
+    char callType;
 
 public:
     /*
      * Passengers Class Constructor and Destructor
      */
 
-    Passenger();        // No args Constructor
+    Passenger();                // No args Constructor
     virtual ~Passenger();       // Destructor
 
 public:
@@ -44,7 +43,7 @@ public:
      * Methods
      */
 
-    // int static GetCount();
+
     void RequestFloor();
     void FindWaitTime();
     virtual void introduce();

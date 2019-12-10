@@ -7,41 +7,17 @@
 #include <iostream>
 using namespace std;
 
-// including classes defination
+
 
 #include "Passenger.h"
 
 
-Passenger::Passenger()
-{
-    cout << "Passenger class Constructor called ---->" << endl;
+Passenger::Passenger(){}
 
+Passenger::~Passenger(){}
 
-}
+void Passenger::RequestFloor(){}
 
+void Passenger::FindWaitTime(){}
 
-Passenger::~Passenger()
-{
-    cout << "Passenger class Destructor called ------>" << endl;cout.flush();
-}
-
-//int Passenger::GetCount()
-//{
-//    return Counter::GetCount();
-//}
-
-
-void Passenger::RequestFloor()
-{
-
-}
-
-void Passenger::FindWaitTime()
-{
-
-}
-
-void Passenger::introduce()
-{
-    cout << "Hi! i am Passenger : ID "  << endl;
-}
+void Passenger::introduce(){cout << "Hi! i am Passenger : ID "  << endl;}

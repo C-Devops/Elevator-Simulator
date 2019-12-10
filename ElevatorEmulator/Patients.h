@@ -8,9 +8,9 @@
 #define ELEVATOREMULATOR_PATIENTS_H
 
 #include "Passenger.h"
-#include "People.h"
 
-class Patients:public People{
+
+class Patients:public Passenger{
 
 public:
     static int count;
